@@ -41,7 +41,30 @@ Mengekstrak link unduhan: insurgent-2015
 Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya menggunakan library [questionary](https://pypi.org/project/questionary).
 
 # Bypass situs unduhan
-Untuk melihat daftar situs unduhan yang dapat di-bypass, gunakan argument `--list-bypass`
+| no | funcname | pattern |
+|:---:|:---:|:---:|
+| 1 | bypass_fembed | `www.naniplay.nanime.in/file/[id]` |
+|  |  | `www.naniplay.nanime.biz/file/[id]` |
+|  |  | `www.naniplay.com/file/[id]` |
+|  |  | `naniplay.nanime.in/file/[id]` |
+|  |  | `naniplay.nanime.biz/file/[id]` |
+|  |  | `naniplay.com/file/[id]` |
+|  |  | `layarkacaxxi.icu/f/[id]` |
+| 2 | bypass_filesIm | `files.im/[id]` |
+|  |  | `racaty.net/[id]` |
+|  |  | `hxfile.co/[id]` |
+| 3 | bypass_letsupload | `letsupload.[id]/[id]` |
+|  |  | `letsupload.[id]?pt=[id]` |
+| 4 | bypass_linkpoi | `linkpoi.me/[id]` |
+|  |  | `uservideo.xyz/file/[id]` |
+|  |  | `www.uservideo.xyz/file/[id]` |
+| 5 | bypass_mediafire | `mediafire.com/file/[id]` |
+|  |  | `mediafire.com/file/[id]/file` |
+|  |  | `www.mediafire.com/file/[id]` |
+|  |  | `www.mediafire.com/file/[id]/file` |
+| 6 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
+|  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
+| 7 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
 
 # Daftar Website
 | no | name | site | tag |
@@ -80,13 +103,17 @@ scraper.extract(result[0])
 ```
 
 # Changelog
+- versi 1.5.17
+  - Menambahkan bypass baru
+    - `letsupload.co`
+
 - versi 1.5.13
-  - menambahkan 3 bypass baru
-    > `racaty.net`, `files.im`, `hxfile.co`
+  - Menambahkan 3 bypass baru
+    - `racaty.net`, `files.im`, `hxfile.co`
   - Menambahkan 2 ekstraktor baru
     - `lk21.extractors.dramaindo`
     - `lk21.extractors.meownime`
-  - fix error: <i>name 'os' is not defined</i>
+  - Fix error: <i>name 'os' is not defined</i>
 
 - versi 1.5.8
   - Memperbaiki masalah pada argument `--json` dan `--json-dump` sekarang anda dapat mengekstrak seluruh link unduhan tanpa terkecuali
