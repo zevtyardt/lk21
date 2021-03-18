@@ -44,21 +44,21 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | no | funcname | pattern |
 |:---:|:---:|:---:|
 | 1 | bypass_anonfiles | `anonfiles.com/[id]` |
-| 2 | bypass_fembed | `www.naniplay.nanime.in/file/[id]` |
+| 2 | bypass_fembed | `layarkacaxxi.icu/f/[id]` |
+|  |  | `www.naniplay.nanime.in/file/[id]` |
 |  |  | `www.naniplay.nanime.biz/file/[id]` |
 |  |  | `www.naniplay.com/file/[id]` |
 |  |  | `naniplay.nanime.in/file/[id]` |
 |  |  | `naniplay.nanime.biz/file/[id]` |
 |  |  | `naniplay.com/file/[id]` |
-|  |  | `layarkacaxxi.icu/f/[id]` |
 | 3 | bypass_filesIm | `files.im/[id]` |
 |  |  | `racaty.net/[id]` |
 |  |  | `hxfile.co/[id]` |
 | 4 | bypass_letsupload | `letsupload.[id]/[id]` |
 |  |  | `letsupload.[id]?pt=[id]` |
-| 5 | bypass_linkpoi | `uservideo.xyz/file/[id]` |
+| 5 | bypass_linkpoi | `linkpoi.me/[id]` |
+|  |  | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
-|  |  | `linkpoi.me/[id]` |
 | 6 | bypass_mediafire | `mediafire.com/file/[id]` |
 |  |  | `mediafire.com/file/[id]/file` |
 |  |  | `www.mediafire.com/file/[id]` |
