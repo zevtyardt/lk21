@@ -1,7 +1,12 @@
 # Changelog
+- versi 1.5.20
+  - Memperbaharui algoritma bypass `zippyshare`
+
 - versi 1.5.17
   - Menambahkan bypass baru
     - `letsupload.co`
+    - `anonfiles.com`
+  - Refactoring code
 
 - versi 1.5.13
   - Menambahkan 3 bypass baru
