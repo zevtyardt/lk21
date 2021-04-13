@@ -1,6 +1,18 @@
 # Changelog
+- versi 1.5.31
+  - Nonaktifkan sementara fungsi bypass `zippyshare`. alasan terdapat perubahan algoritma
+  - Perbaikan bug
+  - Menambahkan extractor baru
+    - `lk21.extractors.bbcsjav.Bbcsjav`
+
+- versi 1.5.23
+  - Menambahkan 2 bypass baru
+    - `bit.ly`
+    - `ouo.io`
+
 - versi 1.5.20
-  - Memperbaharui algoritma bypass `zippyshare`
+  - Mengganti algoritma bypass zippyshare
+  - Perbaikan bug
 
 - versi 1.5.17
   - Menambahkan bypass baru

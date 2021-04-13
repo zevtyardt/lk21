@@ -56,38 +56,42 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 |  |  | `hxfile.co/[id]` |
 | 4 | bypass_letsupload | `letsupload.[id]/[id]` |
 |  |  | `letsupload.[id]?pt=[id]` |
-| 5 | bypass_linkpoi | `linkpoi.me/[id]` |
-|  |  | `uservideo.xyz/file/[id]` |
+| 5 | bypass_linkpoi | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
+|  |  | `linkpoi.me/[id]` |
 | 6 | bypass_mediafire | `mediafire.com/file/[id]` |
 |  |  | `mediafire.com/file/[id]/file` |
 |  |  | `www.mediafire.com/file/[id]` |
 |  |  | `www.mediafire.com/file/[id]/file` |
-| 7 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
+| 7 | bypass_ouo | `ouo.press/[id]` |
+|  |  | `ouo.io/[id]` |
+| 8 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
 |  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
-| 8 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
+|  |  | `bit.ly/[id]` |
 
 # Daftar Website
 | no | name | site | tag |
 |:---:|:---:|:---:|:---:|
-| 1 | Anibatch | `https://o.anibatch.me/` | anime |
-| 2 | Anikyojin | `https://anikyojin.net` | anime |
-| 3 | Animeindo | `https://animeindo.asia` | anime |
-| 4 | Anitoki | `https://www.anitoki.com` | anime |
+| 1 | Anikyojin | `https://anikyojin.net` | anime |
+| 2 | Animeindo | `https://animeindo.asia` | anime |
+| 3 | Anitoki | `https://www.anitoki.com` | anime |
+| 4 | Anibatch | `https://o.anibatch.me/` | anime |
 | 5 | Asuka_Zonawibu | `https://asuka.zonawibu.net` | anime |
-| 6 | Dramaindo | `https://k.dramaindo.my.id` | movie |
-| 7 | Drivenime | `https://drivenime.com` | anime |
+| 6 | Drivenime | `https://drivenime.com` | anime |
+| 7 | Dramaindo | `https://k.dramaindo.my.id` | movie |
 | 8 | Kuramanime | `https://kuramanime.com` | None |
-| 9 | Kusonime | `https://kusonime.com` | anime |
-| 10 | Layarkaca21 | `http://149.56.24.226/` | movie |
+| 9 | Layarkaca21 | `http://149.56.24.226/` | movie |
+| 10 | Kusonime | `https://kusonime.com` | anime |
 | 11 | Melongmovie | `https://melongmovie.net` | movie |
 | 12 | Meownime | `https://meownime.moe` | anime |
 | 13 | Nekonime | `https://nekonime.stream` | anime |
-| 14 | Oploverz | `https://www.oploverz.in` | anime |
-| 15 | Otakudesu | `https://otakudesu.moe` | anime |
-| 16 | Riie | `https://riie.jp` | anime |
+| 14 | Nekopoi | `https://nekopoi.care` | anime |
+| 15 | Oploverz | `https://www.oploverz.in` | anime |
+| 16 | Otakudesu | `https://otakudesu.moe` | anime |
 | 17 | Samehadaku | `https://samehadaku.vip` | anime |
-| 18 | Wibudesu | `https://wibudesu.com` | anime |
+| 18 | Riie | `https://riie.jp` | anime |
+| 19 | Wibudesu | `https://wibudesu.com` | anime |
+| 20 | Bbcsjav | `https://bbcsjav.com` | JAV |
 
 # Library
 lk21 juga dapat digunakan sebagai library. Artinya, Anda dapat mengimpornya ke aplikasi Anda sendiri.
@@ -114,8 +118,20 @@ bypasser.bypass_url("https://letsupload.io/49FA1/Otakudesu_ShoShuuRyo--09_360p.m
 ```
 
 # Changelog
+- versi 1.5.31
+  - Nonaktifkan sementara fungsi bypass `zippyshare`. alasan terdapat perubahan algoritma
+  - Perbaikan bug
+  - Menambahkan extractor baru
+    - `lk21.extractors.bbcsjav.Bbcsjav`
+
+- versi 1.5.23
+  - Menambahkan 2 bypass baru
+    - `bit.ly`
+    - `ouo.io`
+
 - versi 1.5.20
-  - Memperbaharui algoritma bypass `zippyshare`
+  - Mengganti algoritma bypass zippyshare
+  - Perbaikan bug
 
 - versi 1.5.17
   - Menambahkan bypass baru
