@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "lk21"
+author = "Val"
+license = "MIT"
+author-email = "apklover76@gmail.com"
+home-page = "https://github.com/zevtyardt"
+description-file = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+requires = ["questionary", "bs4", "requests", "requests-cache", "colorama"]
+requires-python = ">=3.8"
+
+[tool.flit.scripts]
+lk21 = "lk21.cli:main"
