@@ -9,10 +9,10 @@ def title(text, rtn=False):
     logging.info(r)
 
 def removeprefix(s, p):
-    return re.sub(r"^%s" % p, s)
+    return re.sub(r"^%s" % p, "", s)
 
 def removesuffix(s, p):
-    return re.sub(r"%s$" % p, s)
+    return re.sub(r"%s$" % p, "", s)
 
 def _check_version():
     try:
