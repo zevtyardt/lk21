@@ -19,18 +19,18 @@ colorama.init()
 logging.basicConfig(format=f"\x1b[K%(message)s", level=logging.INFO)
 logging.getLogger("requests").setLevel(logging.WARNING)
 
-logging.info(f"""
+def main():
+    global Bypasser
+
+
+    logging.info(f"""
   _____     ___  ____    _____    __
  |_   _|   |_  ||_  _|  / ___ `. /  |
    | |       | |_/ /   |_/___) | `| |
    | |   _   |  __'.    .'____.'  | |
   _| |__/ | _| |  \ \_ / /_____  _| |_
  |________||____||____||_______||_____| {__version__}
-""")
-
-
-def main():
-    global Bypasser
+    """)
 
     extractors = {
         obj.__name__.lower(): obj for obj in BaseExtractor.__subclasses__() if obj

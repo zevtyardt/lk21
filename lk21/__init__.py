@@ -1,4 +1,4 @@
-"""cari anime dan film subtitle Indonesia"""
+"""unduh anime dan film subtitle Indonesia"""
 
 __version__ = "1.5.61"
 __author__ = "Val"

@@ -2,7 +2,7 @@
 
 <br/>
 <div align="center">
-<strong> cari anime dan film subtitle Indonesia </strong>
+<strong> unduh anime dan film subtitle Indonesia </strong>
 </div>
 
 -------
@@ -45,14 +45,14 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 |:---:|:---:|:---:|
 | 1 | bypass_anonfiles | `anonfiles.com/[id]` |
 | 2 | bypass_fembed | `layarkacaxxi.icu/[id]` |
+|  |  | `fembed.com/[id]` |
+|  |  | `femax20.com/[id]` |
 |  |  | `www.naniplay.nanime.in/file/[id]` |
 |  |  | `www.naniplay.nanime.biz/file/[id]` |
 |  |  | `www.naniplay.com/file/[id]` |
 |  |  | `naniplay.nanime.in/file/[id]` |
 |  |  | `naniplay.nanime.biz/file/[id]` |
 |  |  | `naniplay.com/file/[id]` |
-|  |  | `fembed.com/[id]` |
-|  |  | `femax20.com/[id]` |
 | 3 | bypass_filesIm | `files.im/[id]` |
 |  |  | `racaty.net/[id]` |
 |  |  | `hxfile.co/[id]` |
@@ -68,8 +68,8 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | 8 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
 |  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
 |  |  | `bit.ly/[id]` |
-| 9 | bypass_sbembed | `streamsb.net/[id].html` |
-|  |  | `sbembed.com/[id].html` |
+| 9 | bypass_sbembed | `sbembed.com/[id].html` |
+|  |  | `streamsb.net/[id].html` |
 | 10 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
 | 11 | bypass_uservideo | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
