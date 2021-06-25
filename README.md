@@ -45,14 +45,14 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 |:---:|:---:|:---:|
 | 1 | bypass_anonfiles | `anonfiles.com/[id]` |
 | 2 | bypass_fembed | `layarkacaxxi.icu/[id]` |
+|  |  | `fembed.com/[id]` |
+|  |  | `femax20.com/[id]` |
 |  |  | `www.naniplay.nanime.in/file/[id]` |
 |  |  | `www.naniplay.nanime.biz/file/[id]` |
 |  |  | `www.naniplay.com/file/[id]` |
 |  |  | `naniplay.nanime.in/file/[id]` |
 |  |  | `naniplay.nanime.biz/file/[id]` |
 |  |  | `naniplay.com/file/[id]` |
-|  |  | `fembed.com/[id]` |
-|  |  | `femax20.com/[id]` |
 | 3 | bypass_filesIm | `files.im/[id]` |
 |  |  | `racaty.net/[id]` |
 |  |  | `hxfile.co/[id]` |
@@ -68,35 +68,35 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | 8 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
 |  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
 |  |  | `bit.ly/[id]` |
-| 9 | bypass_sbembed | `streamsb.net/[id].html` |
-|  |  | `sbembed.com/[id].html` |
+| 9 | bypass_sbembed | `sbembed.com/[id].html` |
+|  |  | `streamsb.net/[id].html` |
 | 10 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
 | 11 | bypass_uservideo | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
 | 12 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
 
 # Daftar Website
-| no | name | site | tag |
-|:---:|:---:|:---:|:---:|
-| 1 | Anibatch | `https://o.anibatch.me/` | anime |
-| 2 | Anikyojin | `https://anikyojin.net` | anime |
-| 3 | Animeindo | `https://animeindo.asia` | anime |
-| 4 | Asuka_Zonawibu | `https://asuka.zonawibu.net` | anime |
-| 5 | Anitoki | `https://www.anitoki.com` | anime |
-| 6 | Drivenime | `https://drivenime.com` | anime |
-| 7 | Bbcsjav | `https://bbcsjav.com` | JAV |
-| 8 | Dramaindo | `https://dramaindo.cn` | anime, movie |
-| 9 | Kusonime | `https://kusonime.com` | anime |
-| 10 | Layarkaca21 | `http://149.56.24.226/` | movie |
-| 11 | Melongmovie | `https://melongmovie.net` | movie |
-| 12 | Meownime | `https://meownime.moe` | anime |
-| 13 | Nekopoi | `https://nekopoi.care` | anime |
-| 14 | Oploverz | `https://www.oploverz.in` | anime |
-| 15 | Otakudesu | `https://otakudesu.moe` | anime |
-| 16 | Riie | `https://riie.jp` | anime |
-| 17 | Wibudesu | `https://wibudesu.com` | anime |
-| 18 | Samehadaku | `https://samehadaku.vip` | anime |
-| 19 | KDramaindo | `https://k.dramaindo.my.id` | movie |
+| no | name | site | tag | import |
+|:---:|:---:|:---:|:---:|:---:|
+| 1 | Anibatch | `https://o.anibatch.me/` | anime | `lk21.extractors.anibatch.Anibatch` |
+| 2 | Anikyojin | `https://anikyojin.net` | anime | `lk21.extractors.anikyojin.Anikyojin` |
+| 3 | Animeindo | `https://animeindo.asia` | anime | `lk21.extractors.animeindo.Animeindo` |
+| 4 | Anitoki | `https://www.anitoki.com` | anime | `lk21.extractors.anitoki.Anitoki` |
+| 5 | Bbcsjav | `https://bbcsjav.com` | JAV | `lk21.extractors.bbcsjav.Bbcsjav` |
+| 6 | Dramaindo | `https://dramaindo.cn` | anime, movie | `lk21.extractors.dramaindo.Dramaindo` |
+| 7 | Drivenime | `https://drivenime.com` | anime | `lk21.extractors.drivenime.Drivenime` |
+| 8 | KDramaindo | `https://k.dramaindo.my.id` | movie | `lk21.extractors.kdramaindo.KDramaindo` |
+| 9 | Kusonime | `https://kusonime.com` | anime | `lk21.extractors.kusonime.Kusonime` |
+| 10 | Layarkaca21 | `http://149.56.24.226/` | movie | `lk21.extractors.layarkaca21.Layarkaca21` |
+| 11 | Melongmovie | `https://melongmovie.net` | movie | `lk21.extractors.melongmovie.Melongmovie` |
+| 12 | Meownime | `https://meownime.moe` | anime | `lk21.extractors.meownime.Meownime` |
+| 13 | Nekopoi | `https://nekopoi.care` | anime | `lk21.extractors.nekopoi.Nekopoi` |
+| 14 | Oploverz | `https://www.oploverz.in` | anime | `lk21.extractors.oploverz.Oploverz` |
+| 15 | Otakudesu | `https://otakudesu.moe` | anime | `lk21.extractors.otakudesu.Otakudesu` |
+| 16 | Riie | `https://riie.jp` | anime | `lk21.extractors.riie.Riie` |
+| 17 | Samehadaku | `https://samehadaku.vip` | anime | `lk21.extractors.samehadaku.Samehadaku` |
+| 18 | Wibudesu | `https://wibudesu.com` | anime | `lk21.extractors.wibudesu.Wibudesu` |
+| 19 | Zonawibu | `https://asuka.zonawibu.net` | anime | `lk21.extractors.zonawibu.Zonawibu` |
 
 # Library
 lk21 juga dapat digunakan sebagai library. Artinya, Anda dapat mengimpornya ke aplikasi Anda sendiri.

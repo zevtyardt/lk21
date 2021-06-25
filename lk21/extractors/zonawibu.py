@@ -1,7 +1,7 @@
 from . import BaseExtractor
 
 
-class Asuka_Zonawibu(BaseExtractor):
+class Zonawibu(BaseExtractor):
     tag = "anime"
     host = "https://asuka.zonawibu.net"
 
