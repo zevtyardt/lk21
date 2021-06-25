@@ -1,4 +1,5 @@
 from ..thirdparty import exrex
+from ..utils import removeprefix
 from . import BaseExtractor
 from urllib.parse import urlparse
 from collections import defaultdict
@@ -360,6 +361,6 @@ for key, value in inspect.getmembers(Bypass):
                 valid_regex = re.sub(r"\.[*+]\??", "\[any\]", valid_regex)
                 for url in exrex.generate(valid_regex):
                     Bypass.bypassPattern[key]["support"].add(
-                        urlparse(url).netloc.removeprefix("www."))
+                        removeprefix(urlparse(url).netloc, "www."))
 
 Bypass.allBypassPattern = re.compile(r"|".join(allBypassPattern))

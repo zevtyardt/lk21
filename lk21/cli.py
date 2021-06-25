@@ -2,7 +2,7 @@
 from .thirdparty.exrex import generate as generate_strings
 from .extractors import BaseExtractor
 from .options import ArgumentParser
-from .utils import parse_range, title, _check_version
+from .utils import parse_range, title, _check_version, removeprefix
 from urllib.parse import urlparse
 from pkg_resources import parse_version
 from . import __version__
@@ -52,7 +52,7 @@ def main():
         def add_color(x): return re.sub(
             r"\[[^]]+\]", lambda p: f"\x1b[33m{p[0]}\x1b[0m", x)
         for funcname, item in Bypasser.bypassPattern.items():
-            logging.info(title(funcname.removeprefix("bypass_"), rtn=True))
+            logging.info(title(removeprefix(funcname, "bypass_"), rtn=True))
             for rule in item["pattern"]:
                 valid_url = re.sub(
                     r"\[.+?\][+*]\??|\\[a-zA-Z][+*]\??", "\[id\]", rule.pattern)
