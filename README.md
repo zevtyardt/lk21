@@ -44,7 +44,8 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | no | funcname | pattern |
 |:---:|:---:|:---:|
 | 1 | bypass_anonfiles | `anonfiles.com/[id]` |
-| 2 | bypass_fembed | `layarkacaxxi.icu/[id]` |
+| 2 | bypass_antfiles | `antfiles.com/?dl=[id]` |
+| 3 | bypass_fembed | `layarkacaxxi.icu/[id]` |
 |  |  | `fembed.com/[id]` |
 |  |  | `femax20.com/[id]` |
 |  |  | `www.naniplay.nanime.in/file/[id]` |
@@ -53,27 +54,27 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 |  |  | `naniplay.nanime.in/file/[id]` |
 |  |  | `naniplay.nanime.biz/file/[id]` |
 |  |  | `naniplay.com/file/[id]` |
-| 3 | bypass_filesIm | `files.im/[id]` |
+| 4 | bypass_filesIm | `files.im/[id]` |
 |  |  | `racaty.net/[id]` |
 |  |  | `hxfile.co/[id]` |
-| 4 | bypass_letsupload | `letsupload.[id]/[id]` |
+| 5 | bypass_letsupload | `letsupload.[id]/[id]` |
 |  |  | `letsupload.[id]?pt=[id]` |
-| 5 | bypass_linkpoi | `linkpoi.me/[id]` |
-| 6 | bypass_mediafire | `mediafire.com/file/[id]` |
+| 6 | bypass_linkpoi | `linkpoi.me/[id]` |
+| 7 | bypass_mediafire | `mediafire.com/file/[id]` |
 |  |  | `mediafire.com/file/[id]/file` |
 |  |  | `www.mediafire.com/file/[id]` |
 |  |  | `www.mediafire.com/file/[id]/file` |
-| 7 | bypass_ouo | `ouo.press/[id]` |
+| 8 | bypass_ouo | `ouo.press/[id]` |
 |  |  | `ouo.io/[id]` |
-| 8 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
+| 9 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
 |  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
 |  |  | `bit.ly/[id]` |
-| 9 | bypass_sbembed | `sbembed.com/[id].html` |
-|  |  | `streamsb.net/[id].html` |
-| 10 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
-| 11 | bypass_uservideo | `uservideo.xyz/file/[id]` |
+| 10 | bypass_sbembed | `streamsb.net/[id].html` |
+|  |  | `sbembed.com/[id].html` |
+| 11 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
+| 12 | bypass_uservideo | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
-| 12 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
+| 13 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
 
 # Daftar Website
 | no | name | site | tag | import |
@@ -90,7 +91,7 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | 10 | Layarkaca21 | `http://149.56.24.226/` | movie | `lk21.extractors.layarkaca21.Layarkaca21` |
 | 11 | Melongmovie | `https://melongmovie.net` | movie | `lk21.extractors.melongmovie.Melongmovie` |
 | 12 | Meownime | `https://meownime.moe` | anime | `lk21.extractors.meownime.Meownime` |
-| 13 | Nekopoi | `https://nekopoi.care` | anime | `lk21.extractors.nekopoi.Nekopoi` |
+| 13 | Nekopoi | `http://nekopoi.care` | hentai, JAV | `lk21.extractors.nekopoi.Nekopoi` |
 | 14 | Oploverz | `https://www.oploverz.in` | anime | `lk21.extractors.oploverz.Oploverz` |
 | 15 | Otakudesu | `https://otakudesu.moe` | anime | `lk21.extractors.otakudesu.Otakudesu` |
 | 16 | Riie | `https://riie.jp` | anime | `lk21.extractors.riie.Riie` |
@@ -123,6 +124,13 @@ bypasser.bypass_url("https://letsupload.io/49FA1/Otakudesu_ShoShuuRyo--09_360p.m
 ```
 
 # Changelog
+- versi 1.6
+  - Menambahkan opsi mencari disemua ekstraktor
+    - `-a`, `--all`
+  - Menambahkan bypass baru
+    - `antfiles.com`
+  - Memperbaiki bypass `streamtape`
+
 - versi 1.5.61
   - Menambahkan ekstraktor baru
     - `lk21.extractors.dramaindo.Dramaindo`

@@ -3,9 +3,11 @@ from .thirdparty.exrex import generate as generate_strings
 from .extractors import BaseExtractor
 from .options import ArgumentParser
 from .utils import parse_range, title, _check_version, removeprefix
+from . import __version__
 from urllib.parse import urlparse
 from pkg_resources import parse_version
-from . import __version__
+import threading
+import queue
 import logging
 import questionary
 import sys
@@ -13,15 +15,121 @@ import re
 import json
 import colorama
 import os
-colorama.init()
 
+colorama.init()
 
 logging.basicConfig(format=f"\x1b[K%(message)s", level=logging.INFO)
 logging.getLogger("requests").setLevel(logging.WARNING)
 
-def main():
-    global Bypasser
+extractors = {
+    obj.__name__.lower(): obj for obj in BaseExtractor.__subclasses__() if obj
+}
+Bypasser = extractors.pop("bypass")(logging)
 
+class SearchAll(BaseExtractor):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.endloop = False
+        self.q = queue.Queue()
+        self.lock = threading.Lock()
+        self.result = []
+
+
+    def extract_meta(self, id: str) -> dict:
+        """
+        Ambil semua metadata dari halaman web
+
+        Args:
+              id: type 'str'
+        """
+
+        name, id = id.split(":", 1)
+        eks = extractors[name]()
+
+        self.tag = eks.tag
+        self.host = eks.host
+
+        return eks.extract_meta(id)
+
+    def extract_data(self, id: str) -> dict:
+        """
+        Ambil semua situs unduhan dari halaman web
+
+        Args:
+              id: jalur url dimulai setelah host, type 'str'
+        """
+
+        name, id = id.split(":", 1)
+        eks = extractors[name]()
+
+        self.tag = eks.tag
+        self.host = eks.host
+
+        return eks.extract_data(id)
+
+    def search(self, query: str, page: int = 1) -> list:
+        """
+        Cari item berdasarkan 'query' yang diberikan
+
+        Args:
+              query: kata kunci pencarian, type 'str'
+              page: indeks halaman web, type 'int'
+        """
+
+        threads = []
+        for _ in range(2):
+            th = threading.Thread(target=self.worker, args=(query, page))
+            th.setDaemon(True)
+            th.start()
+
+            threads.append(th)
+
+        for name, eks in extractors.items():
+            self.q.put((name, eks))
+
+        try:
+            self.q.join()
+        except KeyboardInterrupt:
+            pass
+
+        self.endloop = True
+
+        for th in threads:
+            if th.is_alive and not self.q.empty():
+                th.join()
+
+        return self.result
+
+    def worker(self, query, page=1):
+        while not self.endloop:
+            try:
+                name, eks = self.q.get(timeout=5)
+            except Exception:
+                break
+            eks = eks()
+
+            try:
+               data = eks.search(query, page)
+            except Exception as e:
+               data = []
+
+            for n, item in enumerate(data, start=1):
+                title = item["title"]
+                with self.lock:
+                    if re.search(re.escape(query), title, re.I):
+                        self.result.append({
+                            "title": f"[{name}] {title}",
+                            "id": f"{name}:{item['id']}"
+                        })
+
+                    print("\x1b[Ktotal item terkumpul %s item -> %s [%s/%s]" %
+                     (len(self.result), name, n,  len(data)), end="\r")
+
+            self.q.task_done()
+
+def main():
+    global extractors
 
     logging.info(f"""
   _____     ___  ____    _____    __
@@ -32,10 +140,6 @@ def main():
  |________||____||____||_______||_____| {__version__}
     """)
 
-    extractors = {
-        obj.__name__.lower(): obj for obj in BaseExtractor.__subclasses__() if obj
-    }
-    Bypasser = extractors.pop("bypass")(logging)
     Bypasser.run_as_module = False
     _version_msg = _check_version()
 
@@ -73,28 +177,32 @@ def main():
         parser.print_help()
         sys.exit(0)
 
-    extractor = extractors["layarkaca21"]
-    for egn, kls in extractors.items():
-        if args.__dict__[egn]:
-            extractor = kls
-            break
+    if args.all:
+        extractor = SearchAll
+    else:
+        extractor = extractors["layarkaca21"]
+        for egn, kls in extractors.items():
+            if args.__dict__[egn]:
+                extractor = kls
+                break
 
     extractor = extractor(logging, args)
-    if "proxy" in getattr(extractor, "required", []) and not args.skip_proxy:
+    if getattr(extractor, "required_proxy", None) and not args.skip_proxy:
         if not args.proxy:
             parser.error(
                 f"{extractor.__class__.__name__} required arguments --proxy, or skip using the --skip-proxy argument if already using vpn")
     extractor.run_as_module = args.json or args.json_dump
 
-    if not extractor.tag and not args.debug:
+    if not args.all and not extractor.tag and not args.debug:
         sys.exit(f"Module {extractor.__module__} belum bisa digunakan")
+
     query = " ".join(args.query)
     extractor.prepare()
 
     id = False
-    nextPage = True
+    nextPage = args.all
     Range = parse_range(args.page)
-    netloc = urlparse(extractor.host).netloc
+    netloc = urlparse(extractor.host).netloc if not args.all else "ALL"
     try:
         page = Range.__next__()
         cache = {page: extractor.search(query, page=page)}

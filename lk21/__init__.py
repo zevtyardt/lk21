@@ -1,6 +1,6 @@
 """unduh anime dan film subtitle Indonesia"""
 
-__version__ = "1.5.61"
+__version__ = "1.6.0"
 __author__ = "Val"
 __license__ = "MIT"
 __all__ = [

@@ -68,10 +68,14 @@ def ArgumentParser(**kwargs):
                                                 description=(
                                                     f"pilih salah satu dari {len(extractors)} situs berikut:"
                                                 ))
+
     extractor_exclusiveGroup = extractor_group.add_mutually_exclusive_group()
+    extractor_exclusiveGroup.add_argument(
+        "-a", "--all", help="Gunakan semua ekstraktor yg tersedia,\nhanya menampilkan hasil yang relevan", action="store_true")
+
     for extractorName, kls in extractors.items():
         extractorName = extractorName.replace("_", "-")
-        if hasattr(kls, "host"):  # and getattr(kls, "tag", None):
+        if hasattr(kls, "host") and getattr(kls, "tag", None):
             pa = urlparse(kls.host)
             added = False
             for fullName in [extractorName, re.sub(r"[aioue-]", "", extractorName)]:

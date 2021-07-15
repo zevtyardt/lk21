@@ -4,7 +4,7 @@ from . import BaseExtractor
 class Oploverz(BaseExtractor):
     host = "https://www.oploverz.in"
     tag = "anime"
-    required = ["proxy"]
+    required_proxy = True
 
     def extract_data(self, id: str) -> dict:
         """

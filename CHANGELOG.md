@@ -1,4 +1,11 @@
 # Changelog
+- versi 1.6
+  - Menambahkan opsi mencari disemua ekstraktor
+    - `-a`, `--all`
+  - Menambahkan bypass baru
+    - `antfiles.com`
+  - Memperbaiki bypass `streamtape`
+
 - versi 1.5.61
   - Menambahkan ekstraktor baru
     - `lk21.extractors.dramaindo.Dramaindo`

@@ -9,6 +9,7 @@ import sys
 import glob
 import os
 import importlib
+import logging
 
 from ..utils import MetaSet
 
@@ -33,7 +34,7 @@ class BaseExtractor:
 
         self.session = self._build_session()
         self.re = re
-        self.logger = logger
+        self.logger = logger or logging
         self.args = args
         self.counter = 0
         self.run_as_module = True
@@ -139,18 +140,20 @@ class BaseExtractor:
                 raise BaseExtractorError("You must provide a `id` value")
             id = id["id"]
 
-        result = {
-            "extractor": self.__class__.__name__,
-            "tag": self.tag,
-            "url": f"{self.host}/{id}",
-            "host": self.host,
-            "id": id,
-        }
+        result = {}
         meta = self.extract_meta(id)
         result["metadata"] = meta.store if isinstance(
             meta, self.MetaSet) else meta
         result["download"] = self.dict_to_list(
             self.extract_data(id))
+
+        result.update({
+            "extractor": self.__class__.__name__,
+            "tag": self.tag,
+            "url": f"{self.host}/{id}",
+            "host": self.host,
+            "id": id,
+        })
 
         return result
 

@@ -1,5 +1,6 @@
 from . import BaseExtractor
 
+
 class Dramaindo(BaseExtractor):
     tag = "anime, movie"
     host = "https://dramaindo.cn"
@@ -20,7 +21,8 @@ class Dramaindo(BaseExtractor):
 
         if (info := soup.find(class_="info-content")):
             meta["judul"] = soup.find(class_="alter").text
-            meta["genre"] = [a.text for a in info.find(class_="genxed").findAll("a")]
+            meta["genre"] = [a.text for a in info.find(
+                class_="genxed").findAll("a")]
 
             alias = {
                 "Status": "status",
@@ -75,7 +77,7 @@ class Dramaindo(BaseExtractor):
         """
 
         raw = self.session.get(f"{self.host}/page/{page}",
-           params={"s": query})
+                               params={"s": query})
         soup = self.soup(raw)
 
         result = []

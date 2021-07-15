@@ -14,6 +14,18 @@ class Bypass(BaseExtractor):
     bypassPattern = defaultdict(lambda: defaultdict(set))
     allBypassPattern = None
 
+    def bypass_antfiles(self, url):
+        """
+        regex: https?://antfiles\.com/\?dl=[^>]+
+        """
+
+        raw = self.session.get(url)
+        soup = self.soup(raw)
+
+        if (a := soup.find(class_="main-btn", href=True)):
+            return "{0.scheme}://{0.netloc}/{1}".format(
+              urlparse(url), a["href"])
+
     def bypass_ouo(self, url):
         """
         regex: https?://ouo\.(?:press|io)/[^>]+
@@ -68,10 +80,9 @@ class Bypass(BaseExtractor):
         """
 
         raw = self.session.get(url)
-        soup = self.soup(raw)
 
-        if (videolink := soup.find(id="videolink")):
-            nexturl = "https:" + videolink.text
+        if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
+            nexturl = "https://streamtape.com/get_video?" + videolink[-1]
             self.report_bypass(nexturl)
             if (redirect := self.bypass_redirect(nexturl)):
                 return redirect
@@ -83,7 +94,7 @@ class Bypass(BaseExtractor):
         """
 
         raw = self.session.get(url)
-        soup = self.soup(raw)
+        soup = pself.soup(raw)
 
         result = {}
         for a in soup.findAll("a", onclick=re.compile(r"^download_video[^>]+")):

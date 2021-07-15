@@ -4,7 +4,7 @@ from . import BaseExtractor
 class Bbcsjav(BaseExtractor):
     tag = "JAV"
     host = "https://bbcsjav.com"
-    required = ["proxy"]
+    required_proxy = True
 
     def getCode(self, text):
         if (code := self.re.search(r"([A-Z]+-[0-9]+)", text)):

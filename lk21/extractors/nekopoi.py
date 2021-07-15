@@ -1,10 +1,9 @@
 from . import BaseExtractor
 
-
 class Nekopoi(BaseExtractor):
-    tag = "anime"
-    host = "https://nekopoi.care"
-    required = ["proxy"]
+    tag = "hentai, JAV"
+    host = "http://nekopoi.care"
+    required_proxy = True
 
     def extract_meta(self, id: str) -> dict:
         """
@@ -33,6 +32,7 @@ class Nekopoi(BaseExtractor):
         soup = self.soup(raw)
 
         result = {}
+        self._write(soup)
         return result
 
     def search(self, query: str, page: int = 1) -> list:
@@ -44,13 +44,15 @@ class Nekopoi(BaseExtractor):
               page: indeks halaman web, type 'int'
         """
 
-        raw = self.session.get(f"{self.host}/page/{page}",
-                               params={"s": query})
+        raw = self.session.get(f"{self.host}/page/{page}", params={"s": query}, verify=False, allow_redirects=True)
         soup = self.soup(raw)
 
         result = []
         if (res := soup.find(class_="result")):
-            for li in res.ul.findAll("li"):
-                self._write(li)
-                break
+            for li in res.findAll("li"):
+                if (a := li.a):
+                    result.append({
+                        "title": a.text,
+                        "id": self.getPath(a["href"])
+                    })
         return result

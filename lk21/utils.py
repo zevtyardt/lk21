@@ -2,17 +2,21 @@ from collections import UserDict
 import re
 import logging
 
+
 def title(text, rtn=False):
     r = f" [\x1b[92m{text}\x1b[0m]"
     if rtn:
         return r
     logging.info(r)
 
+
 def removeprefix(s, p):
     return re.sub(r"^%s" % p, "", s)
 
+
 def removesuffix(s, p):
     return re.sub(r"%s$" % p, "", s)
+
 
 def _check_version():
     try:
