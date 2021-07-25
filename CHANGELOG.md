@@ -1,5 +1,5 @@
 # Changelog
-- versi 1.6
+- versi 1.6.0
   - Menambahkan opsi mencari disemua ekstraktor
     - `-a`, `--all`
   - Menambahkan bypass baru
