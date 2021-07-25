@@ -151,15 +151,15 @@ class Bypass(BaseExtractor):
 
         raw = self.session.get(url)
         if (match := re.search(r"innerHTML\s*=\s*'([^']+)", raw.text)):
-            soup = self.soup(match.group(1))
+            raw = match.group(1)
+            soup = self.soup(raw)
 
             d = {}
-            for div in soup.findAll("div"):
-                title = div.findPrevious(class_="download-title")
-                r = {}
-                for a in div.findAll("a", href=True):
-                    r[a.text] = a["href"]
-                d[title.text] = r
+            for a in soup.findAll("a", href=True):
+                title = a.findPrevious(class_="download-title")
+                if not d.get(title.text):
+                    d[title.text] = {}
+                d[title.text][a.text] = a["href"]
             return d
 
         return self.bypass_linkpoi(url)
