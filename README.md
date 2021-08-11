@@ -56,25 +56,35 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 |  |  | `naniplay.com/file/[id]` |
 | 4 | bypass_filesIm | `files.im/[id]` |
 |  |  | `racaty.net/[id]` |
+|  |  | `racaty.com/[id]` |
 |  |  | `hxfile.co/[id]` |
-| 5 | bypass_letsupload | `letsupload.[id]/[id]` |
-|  |  | `letsupload.[id]?pt=[id]` |
-| 6 | bypass_linkpoi | `linkpoi.me/[id]` |
-| 7 | bypass_mediafire | `mediafire.com/file/[id]` |
+| 5 | bypass_kotakanimeid | `kotakanimeid.com/videoku/dl/?link=[id]` |
+|  |  | `kotakanimeid.com/url/[id]` |
+| 6 | bypass_letsupload | `letsupload.io/[id]/[id]` |
+|  |  | `letsupload.io/[id]?pt=[id]` |
+|  |  | `letsupload.co/[id]/[id]` |
+|  |  | `letsupload.co/[id]?pt=[id]` |
+| 7 | bypass_linkpoi | `linkpoi.me/[id]` |
+| 8 | bypass_mediafire | `mediafire.com/file/[id]` |
 |  |  | `mediafire.com/file/[id]/file` |
 |  |  | `www.mediafire.com/file/[id]` |
 |  |  | `www.mediafire.com/file/[id]/file` |
-| 8 | bypass_ouo | `ouo.press/[id]` |
+| 9 | bypass_mirrored | `mirrored.to/files/[id]` |
+|  |  | `mirrored.to/mirstats.php[id]` |
+|  |  | `www.mirrored.to/files/[id]` |
+|  |  | `www.mirrored.to/mirstats.php[id]` |
+| 10 | bypass_ouo | `ouo.press/[id]` |
 |  |  | `ouo.io/[id]` |
-| 9 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
+| 11 | bypass_redirect | `link.zonawibu.cc/redirect.php?go=[id]` |
 |  |  | `player.zafkiel.net/blogger.php?yuzu=[id]` |
 |  |  | `bit.ly/[id]` |
-| 10 | bypass_sbembed | `streamsb.net/[id].html` |
-|  |  | `sbembed.com/[id].html` |
-| 11 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
-| 12 | bypass_uservideo | `uservideo.xyz/file/[id]` |
+| 12 | bypass_reupload | `reupload.org/[id]` |
+| 13 | bypass_sbembed | `sbembed.com/[id].html` |
+|  |  | `streamsb.net/[id].html` |
+| 14 | bypass_streamtape | `streamtape.com/v/[id]/[id]` |
+| 15 | bypass_uservideo | `uservideo.xyz/file/[id]` |
 |  |  | `www.uservideo.xyz/file/[id]` |
-| 13 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
+| 16 | bypass_zippyshare | `www[id].zippyshare.com/v/[id]/file.html` |
 
 # Daftar Website
 | no | name | site | tag | import |
@@ -92,12 +102,13 @@ Sangat mudah bukan, untuk membuat user input yang <i>user friendly</i> saya meng
 | 11 | Melongmovie | `https://melongmovie.net` | movie | `lk21.extractors.melongmovie.Melongmovie` |
 | 12 | Meownime | `https://meownime.moe` | anime | `lk21.extractors.meownime.Meownime` |
 | 13 | Nekopoi | `http://nekopoi.care` | hentai, JAV | `lk21.extractors.nekopoi.Nekopoi` |
-| 14 | Oploverz | `https://www.oploverz.in` | anime | `lk21.extractors.oploverz.Oploverz` |
-| 15 | Otakudesu | `https://otakudesu.moe` | anime | `lk21.extractors.otakudesu.Otakudesu` |
-| 16 | Riie | `https://riie.jp` | anime | `lk21.extractors.riie.Riie` |
-| 17 | Samehadaku | `https://samehadaku.vip` | anime | `lk21.extractors.samehadaku.Samehadaku` |
-| 18 | Wibudesu | `https://wibudesu.com` | anime | `lk21.extractors.wibudesu.Wibudesu` |
-| 19 | Zonawibu | `https://asuka.zonawibu.net` | anime | `lk21.extractors.zonawibu.Zonawibu` |
+| 14 | Nontonanimeid | `https://nontonanimeid.com` | None | `lk21.extractors.nontonanimeid.Nontonanimeid` |
+| 15 | Oploverz | `https://www.oploverz.in` | anime | `lk21.extractors.oploverz.Oploverz` |
+| 16 | Otakudesu | `https://otakudesu.moe` | anime | `lk21.extractors.otakudesu.Otakudesu` |
+| 17 | Riie | `https://riie.jp` | anime | `lk21.extractors.riie.Riie` |
+| 18 | Samehadaku | `https://samehadaku.vip` | anime | `lk21.extractors.samehadaku.Samehadaku` |
+| 19 | Wibudesu | `https://wibudesu.com` | anime | `lk21.extractors.wibudesu.Wibudesu` |
+| 20 | Zonawibu | `https://asuka.zonawibu.net` | anime | `lk21.extractors.zonawibu.Zonawibu` |
 
 # Library
 lk21 juga dapat digunakan sebagai library. Artinya, Anda dapat mengimpornya ke aplikasi Anda sendiri.
@@ -124,76 +135,14 @@ bypasser.bypass_url("https://letsupload.io/49FA1/Otakudesu_ShoShuuRyo--09_360p.m
 ```
 
 # Changelog
-- versi 1.6
-  - Menambahkan opsi mencari disemua ekstraktor
-    - `-a`, `--all`
+- Versi 1.6.2
   - Menambahkan bypass baru
-    - `antfiles.com`
-  - Memperbaiki bypass `streamtape`
+    - `kotakanimeid.com`
+    - `mirrored.to`
+    - `reupload.org`
+    - `racaty.com`
 
-- versi 1.5.61
-  - Menambahkan ekstraktor baru
-    - `lk21.extractors.dramaindo.Dramaindo`
-  - Mengganti nama ekstraktor
-    - `lk21.extractors.dramaindo.Dramaindo` menjadi `lk21.extractors.kdramaindo.KDramaindo`
-  - menambahkan bypass baru
-    - `uservideo.xyz`
-
-- versi 1.5.41
-  - Mengembalikan algoritma lama bypass zippyshare
-
-- versi 1.5.34
-  - Menambahkan bypass baru
-    - `sbembed.com`
-    - `streamtape.com`
-    - `fembed.com`
-    - `femax20.com`
-
-- versi 1.5.31
-  - Nonaktifkan sementara fungsi bypass `zippyshare`. alasan terdapat perubahan algoritma
-  - Perbaikan bug
-  - Menambahkan extractor baru
-    - `lk21.extractors.bbcsjav.Bbcsjav`
-
-- versi 1.5.23
-  - Menambahkan 2 bypass baru
-    - `bit.ly`
-    - `ouo.io`
-
-- versi 1.5.20
-  - Mengganti algoritma bypass zippyshare
-  - Perbaikan bug
-
-- versi 1.5.17
-  - Menambahkan bypass baru
-    - `letsupload.co`
-    - `anonfiles.com`
-  - Refactoring code
-
-- versi 1.5.13
-  - Menambahkan 3 bypass baru
-    - `racaty.net`, `files.im`, `hxfile.co`
-  - Menambahkan 2 ekstraktor baru
-    - `lk21.extractors.dramaindo`
-    - `lk21.extractors.meownime`
-  - Fix error: <i>name 'os' is not defined</i>
-
-- versi 1.5.8
-  - Memperbaiki masalah pada argument `--json` dan `--json-dump` sekarang anda dapat mengekstrak seluruh link unduhan tanpa terkecuali
-  - Menambahkan ekstraktor baru `lk21.extractors.Anitoki`
-
-- versi 1.5.1
-  - Menambahkan Changelog ke dalam README.md
-  - Mengubah fungsi `extract` menjadi 2 bagian
-    - `extract_meta` mengambil metadata dari halaman web
-    - `extract_data` mengambil link unduhan dari halaman web
-    Sedangkan fungsi `extract` akan mengambil metadata dan link unduhan dari halaman web
-  - Menambahkan proxy \
-    Beberapa website tidak dapat diakses tanpa menggunakan proxy/VPN. Anda dapat menambahkan proxy manual melalui argument `--proxy` dengan format `IP:PORT` atau `--skip-proxy` jika sudah menggunakan layanan proxy pihak ketiga
-  - Mengganti beberapa host
-    - melongmovie menjadi `melongmovie.net`
-    - otakudesu menjadi `otakudesu.moe`
-
+<a href="/CHANGELOG.md">baca lebih lengkap</a>
 
 <i> Bantu saya memperbaiki dokumentasi module </i>
 
