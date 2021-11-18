@@ -3,7 +3,7 @@ from . import BaseExtractor
 
 class Anibatch(BaseExtractor):
     tag = "anime"
-    host = "https://o.anibatch.me/"
+    host = "https://anibatch.anibatch.moe/"
 
     def extract_meta(self, id: str) -> dict:
         """
