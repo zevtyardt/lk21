@@ -4,14 +4,14 @@ build-backend = "flit_core.buildapi"
 
 [tool.flit.metadata]
 module = "lk21"
-author = "Val"
+author = "Yoga"
 license = "MIT"
-author-email = "apklover76@gmail.com"
-home-page = "https://github.com/zevtyardt"
+author-email = "ahmadzaylani001@gmail.com"
+home-page = "https://github.com/zYxDevs"
 description-file = "README.md"
 classifiers = ["License :: OSI Approved :: MIT License"]
 requires = ["questionary", "bs4", "requests", "requests-cache", "colorama"]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 
 [tool.flit.scripts]
 lk21 = "lk21.cli:main"
