@@ -94,7 +94,7 @@ class Bypass(BaseExtractor):
         """
 
         raw = self.session.get(url)
-        soup = pself.soup(raw)
+        soup = self.soup(raw)
 
         result = {}
         for a in soup.findAll("a", onclick=re.compile(r"^download_video[^>]+")):
