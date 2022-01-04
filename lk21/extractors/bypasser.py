@@ -97,7 +97,7 @@ class Bypass(BaseExtractor):
         soup = self.soup(raw)
 
         result = {}
-        for a in soup.findAll("a", onclick=re.compile(r"^download_video[^>]+")):
+        for a in soup.findAll("a", onclick=re.compile(r"^download_video[^h][^>]+")):
             data = dict(zip(["id", "mode", "hash"], re.findall(
                 r"[\"']([^\"']+)[\"']", a["onclick"])))
             data["op"] = "download_orig"
