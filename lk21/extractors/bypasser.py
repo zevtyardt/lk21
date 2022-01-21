@@ -13,7 +13,7 @@ import logging
 class Bypass(BaseExtractor):
     bypassPattern = defaultdict(lambda: defaultdict(set))
     allBypassPattern = None
-
+    tries=0
     def bypass_antfiles(self, url):
         """
         regex: https?://antfiles\.com/\?dl=[^>]+
