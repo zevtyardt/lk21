@@ -91,7 +91,7 @@ class Bypass(BaseExtractor):
                 return None
             else:
                 if (vid in nexturl):
-                    self.report_bypass(nexturl):
+                    self.report_bypass(nexturl)
                         if (redirect :=self.bypass_redirect(nexturl)):
                             return redirect
                         else:
