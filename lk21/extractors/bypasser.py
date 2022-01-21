@@ -86,7 +86,7 @@ class Bypass(BaseExtractor):
             self.report_bypass(nexturl)
             cdr="streamtape\.com\/\D+\/(.*)\/"
             vid=re.findall(cdr,url)[0]
-            nonlocal tries
+            tries=Bypass().tries
             if (tries > 10):
                 return None
             else:
