@@ -84,7 +84,7 @@ class Bypass(BaseExtractor):
         if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
             nexturl = "https://streamtape.com/get_video?" + videolink[-1]
             self.report_bypass(nexturl)
-            cdr="streamtape\.com\/\D+\/(.*)\/'
+            cdr="streamtape\.com\/\D+\/(.*)\/"
             vid=re.findall(cdr,url)[0]
             nonlocal tries
             if (tries > 10):
