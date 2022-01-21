@@ -91,12 +91,11 @@ class Bypass(BaseExtractor):
                 return None
             else:
                 if (vid in nexturl):
-                    self.report_bypass(nexturl)
-                        if (redirect :=self.bypass_redirect(nexturl)):
-                            return redirect
-                        else:
-                            tries+=1
-                            bypass_streamtape(url)
+                    if (redirect :=self.bypass_redirect(nexturl)):
+                        return redirect
+                    else:
+                        tries+=1
+                        bypass_streamtape(url)
 
     def bypass_sbembed(self, url):
         """
