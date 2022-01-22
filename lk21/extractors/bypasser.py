@@ -87,8 +87,8 @@ class Bypass(BaseExtractor):
             cdr="streamtape\.com\/\D+\/(.*)\/"
             vid=re.findall(cdr,url)[0]
             tries=Bypass().tries
-            if (tries > 10):
-                return "https://861476171.tapecontent.net/radosgw/6oy6z87w4Yhv8R/HJdCBTAmyXKLU5x7d1rCKR-oGyrVKtZCgzvJiWARkuMPt1OK00ULpr5lGIot3qtAiR4_3YhGLcrFs7nlar3q27G1MD2S5J5_awV9siuUD1OCMHUVc04Di_Td--4AhBoYyGiMQQ4LPTzw9QTKdxJ9_gMeMMut_yXLFKfGs9qqiSZCgSEw5pxVD5emgptrYSIxQGonXjAU9IVIOf5-ZJgnLuoTrG2_eQpTBBS4ZsiVXyDCTJrMubRY83HknSFGYIR5nmEy4eApltuR6THEMHTQFB9i4yCdcXUt_SMSGPUBuiAkqhvnDCiGO47OG9R30CwXK597OSIitsCyZMSf/%5BBrazzersExxtra%5D+Sofia+Lee+%28My+Girls+Double+Is+Anal+Trouble%29"
+            if (tries > 100):
+                return None
             else:
                 if (vid in nexturl):
                     if (redirect :=self.bypass_redirect(nexturl)):
