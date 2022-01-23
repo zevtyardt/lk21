@@ -80,22 +80,13 @@ class Bypass(BaseExtractor):
         """
 
         raw = self.session.get(url)
-
+        
         if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
             nexturl = "https://streamtape.com/get_video?" + videolink[-1]
             self.report_bypass(nexturl)
-            cdr="streamtape\.com\/\D+\/(.*)\/"
-            vid=re.findall(cdr,url)[0]
-            tries=Bypass().tries
-            if (tries > 100):
-                return None
-            else:
-                if (vid in nexturl):
-                    if (redirect :=self.bypass_redirect(nexturl)):
-                        return redirect
-                    else:
-                        tries+=1
-                        bypass_streamtape(url)
+            if (redirect := self.bypass_redirect(nexturl)):
+                return redirect
+
 
     def bypass_sbembed(self, url):
         """
