@@ -88,7 +88,7 @@ class Bypass(BaseExtractor):
                 bypass_streamtape(url)
             else:
                 if (redirect := self.bypass_redirect(nexturl)):
-                return redirect
+                    return redirect
 
 
     def bypass_sbembed(self, url):
