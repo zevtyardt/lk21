@@ -3,6 +3,7 @@ from ..utils import removeprefix
 from . import BaseExtractor
 from urllib.parse import urlparse
 from collections import defaultdict
+import time
 import re
 import inspect
 import math
@@ -84,9 +85,11 @@ class Bypass(BaseExtractor):
         if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
             nexturl = "https://streamtape.com/get_video?" + videolink[-1]
             self.report_bypass(nexturl)       
-            while("ip=" not in nexturl):
+            while("ip=" or "tapecontent" not in nexturl):
+                time.sleep(5)
                 Bypass().bypass_streamtape(url)
-            else:
+                if ("ip=" or "tapecontent" in nexturl):
+                    continue
                 if (redirect := self.bypass_redirect(nexturl)):
                     return redirect
 
