@@ -84,8 +84,8 @@ class Bypass(BaseExtractor):
         if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
             nexturl = "https://streamtape.com/get_video?" + videolink[-1]
             self.report_bypass(nexturl)       
-            while((nexturl.startswith("https://streamtape.com/get_video?id")) and ("ip=" not in nexturl)):
-                Bypass().bypass_streamtape(url)
+            while("ip=" not in nexturl):
+                Bypass().bypass_streamtape(self, url)
             else:
                 if (redirect := self.bypass_redirect(nexturl)):
                     return redirect
