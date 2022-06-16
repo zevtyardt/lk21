@@ -3,6 +3,7 @@ from ..utils import removeprefix
 from . import BaseExtractor
 from urllib.parse import urlparse
 from collections import defaultdict
+import time
 import re
 import inspect
 import math
@@ -13,7 +14,7 @@ import logging
 class Bypass(BaseExtractor):
     bypassPattern = defaultdict(lambda: defaultdict(set))
     allBypassPattern = None
-
+    tries=0
     def bypass_antfiles(self, url):
         """
         regex: https?://antfiles\.com/\?dl=[^>]+
@@ -80,12 +81,18 @@ class Bypass(BaseExtractor):
         """
 
         raw = self.session.get(url)
-
+        
         if (videolink := re.findall(r"document.*((?=id\=)[^\"']+)", raw.text)):
             nexturl = "https://streamtape.com/get_video?" + videolink[-1]
-            self.report_bypass(nexturl)
-            if (redirect := self.bypass_redirect(nexturl)):
-                return redirect
+            self.report_bypass(nexturl)       
+            while("ip=" or "tapecontent" not in nexturl):
+                time.sleep(5)
+                Bypass().bypass_streamtape(url)
+                if ("ip=" or "tapecontent" in nexturl):
+                    continue
+                if (redirect := self.bypass_redirect(nexturl)):
+                    return redirect
+
 
     def bypass_sbembed(self, url):
         """
