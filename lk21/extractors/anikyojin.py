@@ -2,7 +2,7 @@ from . import BaseExtractor
 
 
 class Anikyojin(BaseExtractor):
-    host = "https://anikyojin.net"
+    host = "https://anikyojin.org"
     tag = "anime"
     required_proxy = True
 

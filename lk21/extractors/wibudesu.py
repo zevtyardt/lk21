@@ -2,7 +2,7 @@ from . import BaseExtractor
 
 
 class Wibudesu(BaseExtractor):
-    host = "https://wibudesu.com"
+    host = "https://wibudesu.co"
     tag = "anime"
 
     def extract_meta(self, id: str) -> dict:
